@@ -9,15 +9,10 @@
 import UIKit
 import Foundation
 
-class AppCoordinator: NavigatableCoordinator {
-    
-    enum Coordinator {
-        case hello
-    }
+class AppCoordinator {
     
     private let window: UIWindow
     private let navigationController: UINavigationController
-    private var featureCoordinator: FeatureCoordinator?
     
     init(window: UIWindow?, navigationController: UINavigationController = UINavigationController()) {
         self.navigationController = navigationController
@@ -27,20 +22,13 @@ class AppCoordinator: NavigatableCoordinator {
     }
     
     func start() {
-        navigate(to: .hello)
-    }
-    
-    func navigate(to coordinator: Coordinator) {
-        switch coordinator {
-        case .hello:
-            startInitialRouter()
-        }
+        startFeatureCoordinator()
     }
 }
 
 private extension AppCoordinator {
-    func startInitialRouter() {
-        featureCoordinator = FeatureCoordinator(navigationController: navigationController)
-        featureCoordinator?.start()
+    func startFeatureCoordinator() {
+        let featureCoordinator = FeatureCoordinator(navigationController: navigationController)
+        featureCoordinator.start()
     }
 }

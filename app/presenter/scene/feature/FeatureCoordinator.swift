@@ -19,7 +19,9 @@ class FeatureCoordinator {
     func start() {
         showFirstScene()
     }
-    
+}
+
+private extension FeatureCoordinator {
     func showFirstScene() {
         let scene = FeatureSceneFactory.makeFirstScene(delegate: self)
         navigationController.viewControllers = [scene]

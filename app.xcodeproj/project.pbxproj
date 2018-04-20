@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		793AEB2F208A674A006890ED /* FeatureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793AEB2E208A674A006890ED /* FeatureCoordinator.swift */; };
+		793AEB2F208A674A006890ED /* FeatureCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793AEB2E208A674A006890ED /* FeatureCoordinatorTest.swift */; };
 		7964142F20629D7E00C9748D /* FirstViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964142E20629D7E00C9748D /* FirstViewPresenter.swift */; };
 		796414382062CBCF00C9748D /* FirstViewPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796414372062CBCF00C9748D /* FirstViewPresenterTest.swift */; };
 		796ED97F20618D4D0041A4BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796ED97E20618D4D0041A4BE /* AppDelegate.swift */; };
@@ -21,10 +21,10 @@
 		798159E92087B4D300CBF8A2 /* SecondViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798159E82087B4D300CBF8A2 /* SecondViewPresenter.swift */; };
 		79815A042087D73A00CBF8A2 /* SecondViewPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79815A032087D73A00CBF8A2 /* SecondViewPresenterTest.swift */; };
 		79815A082087FA9200CBF8A2 /* FeatureSceneFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79815A072087FA9200CBF8A2 /* FeatureSceneFactoryTest.swift */; };
+		798ADD84208A9C5000966E84 /* AppCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798ADD6F208A9C5000966E84 /* AppCoordinatorTest.swift */; };
 		79BD22EC206296F200B1E39C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BD22EB206296F200B1E39C /* SecondViewController.swift */; };
 		79D341132061B9FB002B1B43 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D341042061B9F1002B1B43 /* Quick.framework */; };
 		79D3412A2061BA1A002B1B43 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D341232061BA0F002B1B43 /* Nimble.framework */; };
-		79E0D48F2086A92E00C7B804 /* Navigatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0D48E2086A92E00C7B804 /* Navigatable.swift */; };
 		79E0D4A52086A94900C7B804 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0D4A42086A94900C7B804 /* AppCoordinator.swift */; };
 		79E0D4A72086AA9600C7B804 /* FeatureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0D4A62086AA9600C7B804 /* FeatureCoordinator.swift */; };
 		79E0D4A92086AAC700C7B804 /* FeatureSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0D4A82086AAC700C7B804 /* FeatureSceneFactory.swift */; };
@@ -174,7 +174,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		793AEB2E208A674A006890ED /* FeatureCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCoordinator.swift; sourceTree = "<group>"; };
+		793AEB2E208A674A006890ED /* FeatureCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCoordinatorTest.swift; sourceTree = "<group>"; };
 		7964142E20629D7E00C9748D /* FirstViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewPresenter.swift; sourceTree = "<group>"; };
 		796414372062CBCF00C9748D /* FirstViewPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewPresenterTest.swift; sourceTree = "<group>"; };
 		796ED97B20618D4D0041A4BE /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,10 +194,10 @@
 		798159E82087B4D300CBF8A2 /* SecondViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewPresenter.swift; sourceTree = "<group>"; };
 		79815A032087D73A00CBF8A2 /* SecondViewPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewPresenterTest.swift; sourceTree = "<group>"; };
 		79815A072087FA9200CBF8A2 /* FeatureSceneFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSceneFactoryTest.swift; sourceTree = "<group>"; };
+		798ADD6F208A9C5000966E84 /* AppCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTest.swift; sourceTree = "<group>"; };
 		79BD22EB206296F200B1E39C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		79D340EB2061B9F1002B1B43 /* Quick.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quick.xcodeproj; path = Carthage/Checkouts/Quick/Quick.xcodeproj; sourceTree = "<group>"; };
 		79D341142061BA0F002B1B43 /* Nimble.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Nimble.xcodeproj; path = Carthage/Checkouts/Nimble/Nimble.xcodeproj; sourceTree = "<group>"; };
-		79E0D48E2086A92E00C7B804 /* Navigatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigatable.swift; sourceTree = "<group>"; };
 		79E0D4A42086A94900C7B804 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		79E0D4A62086AA9600C7B804 /* FeatureCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCoordinator.swift; sourceTree = "<group>"; };
 		79E0D4A82086AAC700C7B804 /* FeatureSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSceneFactory.swift; sourceTree = "<group>"; };
@@ -261,7 +261,6 @@
 		796414302062BDC900C9748D /* router */ = {
 			isa = PBXGroup;
 			children = (
-				79E0D48E2086A92E00C7B804 /* Navigatable.swift */,
 				79E0D4A42086A94900C7B804 /* AppCoordinator.swift */,
 			);
 			path = router;
@@ -355,7 +354,8 @@
 		79815A062087FA6100CBF8A2 /* feature */ = {
 			isa = PBXGroup;
 			children = (
-				793AEB2E208A674A006890ED /* FeatureCoordinator.swift */,
+				798ADD6F208A9C5000966E84 /* AppCoordinatorTest.swift */,
+				793AEB2E208A674A006890ED /* FeatureCoordinatorTest.swift */,
 				79815A072087FA9200CBF8A2 /* FeatureSceneFactoryTest.swift */,
 				796414372062CBCF00C9748D /* FirstViewPresenterTest.swift */,
 				79815A032087D73A00CBF8A2 /* SecondViewPresenterTest.swift */,
@@ -694,7 +694,6 @@
 				79E0D4A72086AA9600C7B804 /* FeatureCoordinator.swift in Sources */,
 				796ED98120618D4D0041A4BE /* FirstViewController.swift in Sources */,
 				79E0D4A92086AAC700C7B804 /* FeatureSceneFactory.swift in Sources */,
-				79E0D48F2086A92E00C7B804 /* Navigatable.swift in Sources */,
 				796ED97F20618D4D0041A4BE /* AppDelegate.swift in Sources */,
 				7964142F20629D7E00C9748D /* FirstViewPresenter.swift in Sources */,
 				798159E92087B4D300CBF8A2 /* SecondViewPresenter.swift in Sources */,
@@ -709,7 +708,8 @@
 				79815A082087FA9200CBF8A2 /* FeatureSceneFactoryTest.swift in Sources */,
 				79815A042087D73A00CBF8A2 /* SecondViewPresenterTest.swift in Sources */,
 				796414382062CBCF00C9748D /* FirstViewPresenterTest.swift in Sources */,
-				793AEB2F208A674A006890ED /* FeatureCoordinator.swift in Sources */,
+				793AEB2F208A674A006890ED /* FeatureCoordinatorTest.swift in Sources */,
+				798ADD84208A9C5000966E84 /* AppCoordinatorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
