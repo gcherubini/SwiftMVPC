@@ -15,21 +15,15 @@ class FeatureSceneFactoryTest: QuickSpec {
     
     override func spec() {
         
-        var factory: FeatureSceneFactory!
+        var scene: FirstViewController!
         var firstDelegateMock: FirstPresenterDelegateMock!
         
-        beforeEach {
-            factory = FeatureSceneFactory()
-            firstDelegateMock = FirstPresenterDelegateMock()
-        }
-        
         describe("FeatureSceneFactoryTest") {
-            
             context("When creating first scene") {
-                var scene: FirstViewController!
-                
+
                 beforeEach {
-                    scene = factory.makeFirstScene(delegate: firstDelegateMock)
+                    firstDelegateMock = FirstPresenterDelegateMock()
+                    scene = FeatureSceneFactory.makeFirstScene(delegate: firstDelegateMock)
                 }
                 
                 it("Sets presenter on view controller") {
@@ -55,7 +49,7 @@ class FeatureSceneFactoryTest: QuickSpec {
                 let userNameMock = "God"
                 
                 beforeEach {
-                    scene = factory.makeSecondScene(userName: userNameMock)
+                    scene = FeatureSceneFactory.makeSecondScene(userName: userNameMock)
                 }
                 
                 it("Sets presenter on view controller") {

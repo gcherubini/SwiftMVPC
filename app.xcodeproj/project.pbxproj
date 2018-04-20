@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		793AEB2F208A674A006890ED /* FeatureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793AEB2E208A674A006890ED /* FeatureCoordinator.swift */; };
 		7964142F20629D7E00C9748D /* FirstViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964142E20629D7E00C9748D /* FirstViewPresenter.swift */; };
 		796414382062CBCF00C9748D /* FirstViewPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796414372062CBCF00C9748D /* FirstViewPresenterTest.swift */; };
 		796ED97F20618D4D0041A4BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796ED97E20618D4D0041A4BE /* AppDelegate.swift */; };
@@ -173,6 +174,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		793AEB2E208A674A006890ED /* FeatureCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCoordinator.swift; sourceTree = "<group>"; };
 		7964142E20629D7E00C9748D /* FirstViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewPresenter.swift; sourceTree = "<group>"; };
 		796414372062CBCF00C9748D /* FirstViewPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewPresenterTest.swift; sourceTree = "<group>"; };
 		796ED97B20618D4D0041A4BE /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -353,6 +355,7 @@
 		79815A062087FA6100CBF8A2 /* feature */ = {
 			isa = PBXGroup;
 			children = (
+				793AEB2E208A674A006890ED /* FeatureCoordinator.swift */,
 				79815A072087FA9200CBF8A2 /* FeatureSceneFactoryTest.swift */,
 				796414372062CBCF00C9748D /* FirstViewPresenterTest.swift */,
 				79815A032087D73A00CBF8A2 /* SecondViewPresenterTest.swift */,
@@ -706,6 +709,7 @@
 				79815A082087FA9200CBF8A2 /* FeatureSceneFactoryTest.swift in Sources */,
 				79815A042087D73A00CBF8A2 /* SecondViewPresenterTest.swift in Sources */,
 				796414382062CBCF00C9748D /* FirstViewPresenterTest.swift in Sources */,
+				793AEB2F208A674A006890ED /* FeatureCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

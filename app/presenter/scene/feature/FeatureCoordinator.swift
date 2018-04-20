@@ -8,48 +8,31 @@
 
 import UIKit
 
-class FeatureCoordinator: NavigatableScene {
-    enum Scene {
-        case first
-        case second(userName: String)
-    }
-    
+class FeatureCoordinator {
+
     private let navigationController: UINavigationController
-    private let sceneFactory: FeatureSceneFactory
     
-    init(navigationController: UINavigationController = UINavigationController(), sceneFactory: FeatureSceneFactory = FeatureSceneFactory()) {
+    init(navigationController: UINavigationController = UINavigationController()) {
         self.navigationController = navigationController
-        self.sceneFactory = sceneFactory
     }
     
     func start() {
-        navigate(to: .first)
+        showFirstScene()
     }
     
-    func navigate(to scene: Scene) {
-        switch scene {
-        case .first:
-            showFirstScene()
-        case .second(let userName):
-            showSecondScene(with: userName)
-        }
-    }
-}
-
-private extension FeatureCoordinator {
     func showFirstScene() {
-        let firstScene = sceneFactory.makeFirstScene(delegate: self)
-        navigationController.viewControllers = [firstScene]
+        let scene = FeatureSceneFactory.makeFirstScene(delegate: self)
+        navigationController.viewControllers = [scene]
     }
     
-    func showSecondScene(with userName: String) {
-        let helloScene = sceneFactory.makeSecondScene(userName: userName)
-        navigationController.pushViewController(helloScene, animated: true)
+    func showSecondScene(userName: String) {
+        let scene = FeatureSceneFactory.makeSecondScene(userName: userName)
+        navigationController.pushViewController(scene, animated: true)
     }
 }
 
 extension FeatureCoordinator: FirstViewPresenterDelegate {
     func didEnterName(_ userName: String) {
-        showSecondScene(with: userName)
+        showSecondScene(userName: userName)
     }
 }
