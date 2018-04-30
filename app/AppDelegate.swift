@@ -12,11 +12,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var appRouter: AppCoordinator!
+    var appCoordinator: AppCoordinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        appRouter = AppCoordinator(window: window)
-        appRouter.navigate(to: .hello)
+        appCoordinator = AppCoordinator(window: window)
+        appCoordinator.start()
         
         return true
     }

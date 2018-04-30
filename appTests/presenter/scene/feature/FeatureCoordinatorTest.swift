@@ -53,16 +53,3 @@ class FeatureCoordinatorTest: QuickSpec {
         }
     }
 }
-
-class NavigationControllerMock: UINavigationController {
-    var setViewControllersCall: (viewControllers: [UIViewController], animated: Bool)?
-    var pushViewControllerCall: (viewController: UIViewController, animated: Bool)?
-    
-    override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
-        setViewControllersCall = (viewControllers, animated)
-    }
-    
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        pushViewControllerCall = (viewController, animated)
-    }
-}

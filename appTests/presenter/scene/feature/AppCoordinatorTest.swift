@@ -19,19 +19,29 @@ class AppCoordinatorTest: QuickSpec {
         
         var windowMock: UIWindow!
         var navigationMock: NavigationControllerMock!
-        var featureCoordinator: FeatureCoordinator!
+        var appCoordinator: AppCoordinator!
         
         describe("AppCoordinatorTest") {
             
             beforeEach {
                 windowMock = UIWindow()
                 navigationMock = NavigationControllerMock()
-                featureCoordinator = AppCoordinator(window: windowMock, navigationController: navigationMock)
+                appCoordinator = AppCoordinator(window: windowMock, navigationController: navigationMock)
+            }
+            
+            context("When it init") {
+                it("Setup window configuration") {
+                    expect(windowMock.rootViewController) == navigationMock
+                    expect(windowMock.isKeyWindow) == true
+                    expect(windowMock.isHidden) == false
+                }
             }
             
             context("When it starts") {
                 it("Start the feature coordinator") {
-                   
+                    appCoordinator.start()
+                    expect(navigationMock.setViewControllersCall?.viewControllers[0] is FirstViewController) == true
+                    expect(navigationMock.setViewControllersCall?.animated) == false
                 }
             }
         }

@@ -13,6 +13,7 @@ class AppCoordinator {
     
     private let window: UIWindow
     private let navigationController: UINavigationController
+    var featureCoordinator: FeatureCoordinator?
     
     init(window: UIWindow?, navigationController: UINavigationController = UINavigationController()) {
         self.navigationController = navigationController
@@ -28,7 +29,7 @@ class AppCoordinator {
 
 private extension AppCoordinator {
     func startFeatureCoordinator() {
-        let featureCoordinator = FeatureCoordinator(navigationController: navigationController)
-        featureCoordinator.start()
+        featureCoordinator = FeatureCoordinator(navigationController: navigationController)
+        featureCoordinator?.start()
     }
 }
