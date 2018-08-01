@@ -15,9 +15,9 @@ class AppCoordinator {
     private let navigationController: UINavigationController
     var featureCoordinator: FeatureCoordinator?
     
-    init(window: UIWindow?, navigationController: UINavigationController = UINavigationController()) {
+    init(window: UIWindow = UIWindow(), navigationController: UINavigationController = UINavigationController()) {
+        self.window = window
         self.navigationController = navigationController
-        self.window = window ?? UIWindow()
         self.window.rootViewController = navigationController
         self.window.makeKeyAndVisible()
     }
