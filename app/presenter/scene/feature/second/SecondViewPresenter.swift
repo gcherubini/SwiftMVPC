@@ -31,7 +31,7 @@ class SecondViewPresenter {
             return
         }
         
-        let message = "\(nameFromParam) from param"
+        let message = "\(nameFromParam) (from param)"
         view?.setNameFromParam(message)
     }
     
@@ -41,7 +41,7 @@ class SecondViewPresenter {
             return
         }
         
-        let message = "\(nameFromPersistence) from persistence"
+        let message = "\(nameFromPersistence) (from persistence)"
         view?.setNameFromPersistence(message)
     }
 }
