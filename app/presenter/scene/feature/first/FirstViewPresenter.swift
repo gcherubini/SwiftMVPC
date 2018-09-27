@@ -14,8 +14,8 @@ protocol FirstViewPresenterDelegate: class {
 
 class FirstViewPresenter {
     
-    var view: FirstView!
-    var service: PersistenceService!
+    let view: FirstView
+    let service: PersistenceService
     weak var delegate: FirstViewPresenterDelegate?
     
     init(service: PersistenceService, view: FirstView, delegate: FirstViewPresenterDelegate?) {
@@ -25,13 +25,13 @@ class FirstViewPresenter {
     }
     
     func load() {
-        view?.setBtnText("Submit!!!")
-        view?.setTextFieldHint("Tell me your name")
+        view.setBtnText("Submit!!!")
+        view.setTextFieldHint("Tell me your name")
     }
     
     func persist(userName: String?) {
         guard let userName = userName, !userName.isEmpty else {
-            view?.showError(with: "Fill field correctly!")
+            view.showError(with: "Fill field correctly!")
             return
         }
         

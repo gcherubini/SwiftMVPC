@@ -39,7 +39,7 @@ class SecondViewPresenterTest: QuickSpec {
                 context("When it has a proper value") {
                     it("Present a message with name") {
                         setup(serviceMock: serviceMock, nameFromParam: "God")
-                        expect(viewSpy.nameFromParamMessage) == "God from param"
+                        expect(viewSpy.nameFromParamMessage) == "God (from param)"
                     }
                 }
                 context("When it is empty") {
@@ -61,7 +61,7 @@ class SecondViewPresenterTest: QuickSpec {
                 context("When it has a proper value") {
                     it("Present a message with name") {
                         setup(serviceMock: serviceMock)
-                        expect(viewSpy.nameFromPersistenceMessage) == "God from persistence"
+                        expect(viewSpy.nameFromPersistenceMessage) == "God (from persistence)"
                     }
                 }
                 context("When it is empty") {
