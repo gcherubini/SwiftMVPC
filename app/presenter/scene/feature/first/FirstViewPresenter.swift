@@ -25,7 +25,7 @@ class FirstViewPresenter {
     }
     
     func load() {
-        view.setBtnText("Submit!!!")
+        view.setButtonText("Submit!!!")
         view.setTextFieldHint("Tell me your name")
     }
     

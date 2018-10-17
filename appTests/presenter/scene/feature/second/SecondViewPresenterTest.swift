@@ -13,79 +13,74 @@ import Nimble
 
 class SecondViewPresenterTest: QuickSpec {
     
-    override func spec() {
-        
-        var viewSpy: ViewSpy!
-        var serviceMock: ServiceMock!
-        var serviceNilMock: ServiceNilMock!
-        var serviceEmptyMock: ServiceEmptyMock!
-        var presenter: SecondViewPresenter!
-        
-        describe("Presenter") {
-        
-            beforeEach {
-                viewSpy = ViewSpy()
-                serviceMock = ServiceMock()
-                serviceNilMock = ServiceNilMock()
-                serviceEmptyMock = ServiceEmptyMock()
-            }
-            
-            func setup(serviceMock: PersistenceService, nameFromParam: String? = nil) {
-                presenter = SecondViewPresenter(service: serviceMock, view: viewSpy, nameFromParam: nameFromParam)
-                presenter.load()
-            }
-            
-            describe("Load user name from param") {
-                context("When it has a proper value") {
-                    it("Present a message with name") {
-                        setup(serviceMock: serviceMock, nameFromParam: "God")
-                        expect(viewSpy.nameFromParamMessage) == "God (from param)"
-                    }
-                }
-                context("When it is empty") {
-                    it("Show an error message") {
-                        setup(serviceMock: serviceMock, nameFromParam: "")
-                        expect(viewSpy.error) == "Error getting user name from param"
-                    }
-                }
-                
-                context("When it is nil") {
-                    it("Show an error message") {
-                        setup(serviceMock: serviceMock, nameFromParam: nil)
-                        expect(viewSpy.error) == "Error getting user name from param"
-                    }
-                }
-            }
-            
-            describe("Load user name from persistence") {
-                context("When it has a proper value") {
-                    it("Present a message with name") {
-                        setup(serviceMock: serviceMock)
-                        expect(viewSpy.nameFromPersistenceMessage) == "God (from persistence)"
-                    }
-                }
-                context("When it is empty") {
-                    it("Show an error message") {
-                        setup(serviceMock: serviceEmptyMock)
-                        expect(viewSpy.error) == "Error getting user name from persistence"
-                    }
-                }
-                
-                context("When it is nil") {
-                    it("Show an error message") {
-                        setup(serviceMock: serviceNilMock)
-                        expect(viewSpy.error) == "Error getting user name from persistence"
-                    }
-                }
-            }
-        }
-    }
+	override func spec() {
+		
+		var sut: SecondViewPresenter!
+		var viewSpy = ViewSpy()
+	
+		describe("SecondPresenter") {
+			
+			func setup(serviceMock: PersistenceService = ServiceMock(),
+								 nameFromParam: String? = nil) {
+					sut = SecondViewPresenter(
+						service: serviceMock,
+						view: viewSpy,
+						nameFromParam: nameFromParam
+					)
+					sut.load()
+			}
+		
+			describe("Load user name from param") {
+					context("When it has a proper value") {
+							it("Present a message with name") {
+									setup(nameFromParam: "God")
+									expect(viewSpy.nameFromParamMessage) == "God (from param)"
+							}
+					}
+					context("When it is empty") {
+							it("Show an error message") {
+									setup(nameFromParam: "")
+									expect(viewSpy.errorMessage) == "Error getting user name from param"
+							}
+					}
+				
+					context("When it is nil") {
+							it("Show an error message") {
+									setup(nameFromParam: nil)
+									expect(viewSpy.errorMessage) == "Error getting user name from param"
+							}
+					}
+			}
+		
+			describe("Load user name from persistence") {
+					context("When it has a proper value") {
+							it("Present a message with name") {
+									setup()
+									expect(viewSpy.nameFromPersistenceMessage) == "God (from persistence)"
+							}
+					}
+					context("When it is empty") {
+							it("Show an error message") {
+									setup(serviceMock: ServiceEmptyMock())
+									expect(viewSpy.errorMessage) == "Error getting user name from persistence"
+							}
+					}
+				
+					context("When it is nil") {
+							it("Show an error message") {
+									setup(serviceMock: ServiceNilMock())
+									expect(viewSpy.errorMessage) == "Error getting user name from persistence"
+							}
+					}
+			}
+		}
+	}
 }
 
 fileprivate class ViewSpy: SecondView {
     var nameFromParamMessage: String?
     var nameFromPersistenceMessage: String?
-    var error: String?
+    var errorMessage: String?
     
     func setNameFromParam(_ text: String) {
         nameFromParamMessage = text
@@ -96,7 +91,7 @@ fileprivate class ViewSpy: SecondView {
     }
     
     func showError(with message: String) {
-        error = message
+        errorMessage = message
     }
 }
 

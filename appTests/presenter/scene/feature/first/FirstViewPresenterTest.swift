@@ -15,62 +15,53 @@ class FirstViewPresenterTest: QuickSpec {
     
     override func spec() {
         
-        var viewSpy: ViewSpy!
-        var serviceSpy: ServiceSpy!
-        var delegateSpy: DelegateSpy!
-        var presenter: FirstViewPresenter!
+        let viewSpy = ViewSpy()
+        let serviceSpy = ServiceSpy()
+        let delegateSpy = DelegateSpy()
+        let presenter = FirstViewPresenter(service: serviceSpy, view: viewSpy, delegate: delegateSpy)
         
-        describe("Presenter") {
-        
-            beforeEach {
-                viewSpy = ViewSpy()
-                serviceSpy = ServiceSpy()
-                delegateSpy = DelegateSpy()
-                presenter = FirstViewPresenter(service: serviceSpy, view: viewSpy, delegate: delegateSpy)
-            }
-            
-            describe("Load") {
-                
+        describe("FirstPresenterPresenter") {
+            describe("On Load") {
                 beforeEach {
                     presenter.load()
                 }
                 
-                it("Text field hint") {
+                it("Set text field hint") {
                     expect(viewSpy.textFieldHint) == "Tell me your name"
                 }
                 
-                it("Button text") {
+                it("Set button text") {
                     expect(viewSpy.buttonText) == "Submit!!!"
                 }
             }
             
-            describe("Persist") {
-                context("Passing an appropriate user name") {
+            describe("On Persist") {
+                context("With a proper user name") {
                     
                     beforeEach {
-                        presenter.persist(userName: "God")
+                        presenter.persist(userName: "mockedName")
                     }
                     
                     it("Persist it") {
-                        expect(serviceSpy.persistedUserName) == "God"
+                        expect(serviceSpy.persistedUserName) == "mockedName"
                     }
                     
                     it("Pass it to delegate") {
-                        expect(delegateSpy.enteredName) == "God"
+                        expect(delegateSpy.enteredName) == "mockedName"
                     }
                 }
                 
-                context("Passing a nil user name") {
-                    it("Show a specific error") {
+                context("With a nil user name") {
+                    it("Show error with custom message") {
                         presenter.persist(userName: nil)
-                        expect(viewSpy.error) == "Fill field correctly!"
+                        expect(viewSpy.errorMessage) == "Fill field correctly!"
                     }
                 }
                 
-                context("Passing an empty user name") {
-                    it("Show a specific error") {
+                context("With an empty user name") {
+                    it("Show error with custom message") {
                         presenter.persist(userName: "")
-                        expect(viewSpy.error) == "Fill field correctly!"
+                        expect(viewSpy.errorMessage) == "Fill field correctly!"
                     }
                 }
             }
@@ -81,18 +72,18 @@ class FirstViewPresenterTest: QuickSpec {
 fileprivate class ViewSpy: FirstView {
     var textFieldHint: String?
     var buttonText: String?
-    var error: String?
+    var errorMessage: String?
     
     func setTextFieldHint(_ hint: String) {
         textFieldHint = hint
     }
     
-    func setBtnText(_ text: String) {
+    func setButtonText(_ text: String) {
         buttonText = text
     }
     
     func showError(with message: String) {
-        error = message
+        errorMessage = message
     }
 }
 

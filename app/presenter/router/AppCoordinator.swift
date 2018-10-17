@@ -9,27 +9,30 @@
 import UIKit
 import Foundation
 
-class AppCoordinator {
+class AppCoordinator: Coordinator {
     
     private let window: UIWindow
     private let navigationController: UINavigationController
-    var featureCoordinator: FeatureCoordinator?
+    var starterCoordinator: Coordinator?
     
-    init(window: UIWindow = UIWindow(), navigationController: UINavigationController = UINavigationController()) {
+    init(window: UIWindow = UIWindow(),
+         navigationController: UINavigationController = UINavigationController()) {
         self.window = window
         self.navigationController = navigationController
-        self.window.rootViewController = navigationController
-        self.window.makeKeyAndVisible()
+				setupWindow()
+				setupStarterCoordinator()
     }
-    
-    func start() {
-        startFeatureCoordinator()
-    }
-}
-
-private extension AppCoordinator {
-    func startFeatureCoordinator() {
-        featureCoordinator = FeatureCoordinator(navigationController: navigationController)
-        featureCoordinator?.start()
-    }
+	
+	func setupWindow() {
+		self.window.rootViewController = navigationController
+		self.window.makeKeyAndVisible()
+	}
+	
+	func setupStarterCoordinator() {
+		starterCoordinator = FeatureCoordinator(navigationController: navigationController)
+	}
+	
+	func start() {
+		starterCoordinator?.start()
+	}
 }

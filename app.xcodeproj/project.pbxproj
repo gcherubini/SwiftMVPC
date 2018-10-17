@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		793AEB2F208A674A006890ED /* FeatureCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793AEB2E208A674A006890ED /* FeatureCoordinatorTest.swift */; };
+		7956F17F2177B9D30060EC06 /* CoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7956F17E2177B9D30060EC06 /* CoordinatorMock.swift */; };
 		7964142F20629D7E00C9748D /* FirstViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964142E20629D7E00C9748D /* FirstViewPresenter.swift */; };
 		796414382062CBCF00C9748D /* FirstViewPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796414372062CBCF00C9748D /* FirstViewPresenterTest.swift */; };
 		796ED97F20618D4D0041A4BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796ED97E20618D4D0041A4BE /* AppDelegate.swift */; };
@@ -22,6 +23,8 @@
 		79815A042087D73A00CBF8A2 /* SecondViewPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79815A032087D73A00CBF8A2 /* SecondViewPresenterTest.swift */; };
 		79815A082087FA9200CBF8A2 /* FeatureSceneFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79815A072087FA9200CBF8A2 /* FeatureSceneFactoryTest.swift */; };
 		798ADD84208A9C5000966E84 /* AppCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798ADD6F208A9C5000966E84 /* AppCoordinatorTest.swift */; };
+		79A9F6BA215D8D1900B6929D /* UIWindowSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9F6B9215D8D1900B6929D /* UIWindowSpy.swift */; };
+		79A9F6D0215D902E00B6929D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9F6CF215D902E00B6929D /* Coordinator.swift */; };
 		79BD22EC206296F200B1E39C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BD22EB206296F200B1E39C /* SecondViewController.swift */; };
 		79CC577820977859001347A1 /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC577720977859001347A1 /* NavigationControllerMock.swift */; };
 		79D341132061B9FB002B1B43 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D341042061B9F1002B1B43 /* Quick.framework */; };
@@ -177,6 +180,7 @@
 
 /* Begin PBXFileReference section */
 		793AEB2E208A674A006890ED /* FeatureCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCoordinatorTest.swift; sourceTree = "<group>"; };
+		7956F17E2177B9D30060EC06 /* CoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorMock.swift; sourceTree = "<group>"; };
 		7964142E20629D7E00C9748D /* FirstViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewPresenter.swift; sourceTree = "<group>"; };
 		796414372062CBCF00C9748D /* FirstViewPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewPresenterTest.swift; sourceTree = "<group>"; };
 		796ED97B20618D4D0041A4BE /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +201,8 @@
 		79815A032087D73A00CBF8A2 /* SecondViewPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewPresenterTest.swift; sourceTree = "<group>"; };
 		79815A072087FA9200CBF8A2 /* FeatureSceneFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSceneFactoryTest.swift; sourceTree = "<group>"; };
 		798ADD6F208A9C5000966E84 /* AppCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTest.swift; sourceTree = "<group>"; };
+		79A9F6B9215D8D1900B6929D /* UIWindowSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowSpy.swift; sourceTree = "<group>"; };
+		79A9F6CF215D902E00B6929D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		79BD22EB206296F200B1E39C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		79CC577720977859001347A1 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerMock.swift; sourceTree = "<group>"; };
 		79D340EB2061B9F1002B1B43 /* Quick.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quick.xcodeproj; path = Carthage/Checkouts/Quick/Quick.xcodeproj; sourceTree = "<group>"; };
@@ -266,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				79E0D4A42086A94900C7B804 /* AppCoordinator.swift */,
+				79A9F6CF215D902E00B6929D /* Coordinator.swift */,
 			);
 			path = router;
 			sourceTree = "<group>";
@@ -373,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				79CC577720977859001347A1 /* NavigationControllerMock.swift */,
+				79A9F6B9215D8D1900B6929D /* UIWindowSpy.swift */,
 			);
 			path = mock;
 			sourceTree = "<group>";
@@ -441,6 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				798ADD6F208A9C5000966E84 /* AppCoordinatorTest.swift */,
+				7956F17E2177B9D30060EC06 /* CoordinatorMock.swift */,
 			);
 			path = router;
 			sourceTree = "<group>";
@@ -740,6 +749,7 @@
 				79E0D4A72086AA9600C7B804 /* FeatureCoordinator.swift in Sources */,
 				796ED98120618D4D0041A4BE /* FirstViewController.swift in Sources */,
 				79E0D4A92086AAC700C7B804 /* FeatureSceneFactory.swift in Sources */,
+				79A9F6D0215D902E00B6929D /* Coordinator.swift in Sources */,
 				796ED97F20618D4D0041A4BE /* AppDelegate.swift in Sources */,
 				7964142F20629D7E00C9748D /* FirstViewPresenter.swift in Sources */,
 				798159E92087B4D300CBF8A2 /* SecondViewPresenter.swift in Sources */,
@@ -757,7 +767,9 @@
 				796414382062CBCF00C9748D /* FirstViewPresenterTest.swift in Sources */,
 				793AEB2F208A674A006890ED /* FeatureCoordinatorTest.swift in Sources */,
 				798ADD84208A9C5000966E84 /* AppCoordinatorTest.swift in Sources */,
+				79A9F6BA215D8D1900B6929D /* UIWindowSpy.swift in Sources */,
 				79CC577820977859001347A1 /* NavigationControllerMock.swift in Sources */,
+				7956F17F2177B9D30060EC06 /* CoordinatorMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

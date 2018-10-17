@@ -16,34 +16,32 @@ import Nimble
 class AppCoordinatorTest: QuickSpec {
 
     override func spec() {
+			
+        let windowSpy = UIWindowSpy()
+        let navigationMock = NavigationControllerMock()
+        let sut = AppCoordinator(window: windowSpy, navigationController: navigationMock)
         
-        var windowMock: UIWindow!
-        var navigationMock: NavigationControllerMock!
-        var appCoordinator: AppCoordinator!
-        
-        describe("AppCoordinatorTest") {
-            
-            beforeEach {
-                windowMock = UIWindow()
-                navigationMock = NavigationControllerMock()
-                appCoordinator = AppCoordinator(window: windowMock, navigationController: navigationMock)
+				describe("AppCoordinator") {
+          context("When it initializes") {
+            it("Setup window configuration") {
+              expect(windowSpy.rootViewController) == navigationMock
+              expect(windowSpy.makesKeyAndVisible) == true
             }
-            
-            context("When it init") {
-                it("Setup window configuration") {
-                    expect(windowMock.rootViewController) == navigationMock
-                    expect(windowMock.isKeyWindow) == true
-                    expect(windowMock.isHidden) == false
-                }
-            }
-            
-            context("When it starts") {
-                it("Start the feature coordinator") {
-                    appCoordinator.start()
-                    expect(navigationMock.setViewControllersCall?.viewControllers[0] is FirstViewController) == true
-                    expect(navigationMock.setViewControllersCall?.animated) == false
-                }
-            }
+						
+						it("Setup starter coordinator") {
+							expect(sut.starterCoordinator is FeatureCoordinator) == true
+						}
+          }
+          
+          context("When it starts") {
+              it("Start the starter coordinator") {
+								let coordinatorSpy = CoordinatorMock()
+                sut.starterCoordinator = coordinatorSpy
+                sut.start()
+                expect(coordinatorSpy.hasStarted) == true
+              }
+          }
         }
     }
 }
+

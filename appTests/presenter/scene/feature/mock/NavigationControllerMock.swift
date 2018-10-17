@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 class NavigationControllerMock: UINavigationController {
-    var setViewControllersCall: (viewControllers: [UIViewController], animated: Bool)?
-    var pushViewControllerCall: (viewController: UIViewController, animated: Bool)?
-    
-    override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
-        setViewControllersCall = (viewControllers, animated)
-    }
-    
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        pushViewControllerCall = (viewController, animated)
-    }
+		var setViewController: [UIViewController]?
+    var pushedViewController: (viewController: UIViewController, animated: Bool)?
+	
+		override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
+				setViewController = viewControllers
+			}
+	
+		override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+				pushedViewController = (viewController, animated)
+		}
 }

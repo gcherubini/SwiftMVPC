@@ -14,18 +14,11 @@ import Nimble
 class FeatureSceneFactoryTest: QuickSpec {
     
     override func spec() {
-        
-        var scene: FirstViewController!
-        var firstDelegateMock: FirstPresenterDelegateMock!
-        
         describe("FeatureSceneFactoryTest") {
             context("When creating first scene") {
-
-                beforeEach {
-                    firstDelegateMock = FirstPresenterDelegateMock()
-                    scene = FeatureSceneFactory.makeFirstScene(delegate: firstDelegateMock)
-                }
-                
+								let firstDelegateMock = FirstPresenterDelegateMock()
+								let scene = FeatureSceneFactory.makeFirstScene(delegate: firstDelegateMock)
+							
                 it("Sets presenter on view controller") {
                     expect(scene.presenter).toNot(beNil())
                 }
@@ -44,13 +37,9 @@ class FeatureSceneFactoryTest: QuickSpec {
                 }
             }
             
-            context("When creating first scene") {
-                var scene: SecondViewController!
-                let userNameMock = "God"
-                
-                beforeEach {
-                    scene = FeatureSceneFactory.makeSecondScene(userName: userNameMock)
-                }
+            context("When creating second scene") {
+								let userNameMock = "mockedName"
+                let scene = FeatureSceneFactory.makeSecondScene(userName: userNameMock)
                 
                 it("Sets presenter on view controller") {
                     expect(scene.presenter).toNot(beNil())

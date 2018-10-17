@@ -1,5 +1,5 @@
 //
-//  HelloCoordinator.swift
+//  FeatureCoordinator.swift
 //  app
 //
 //  Created by Guilherme Cherubini on 17/04/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeatureCoordinator {
+class FeatureCoordinator: Coordinator {
 
     private let navigationController: UINavigationController
     
@@ -24,7 +24,7 @@ class FeatureCoordinator {
 extension FeatureCoordinator {
     func showFirstScene() {
         let scene = FeatureSceneFactory.makeFirstScene(delegate: self)
-        navigationController.viewControllers = [scene]
+			navigationController.viewControllers = [scene]
     }
     
     func showSecondScene(userName: String) {

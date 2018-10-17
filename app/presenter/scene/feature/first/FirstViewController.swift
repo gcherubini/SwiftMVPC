@@ -10,7 +10,7 @@ import UIKit
 
 protocol FirstView: class {
     func setTextFieldHint(_ hint: String)
-    func setBtnText(_ text: String)
+    func setButtonText(_ text: String)
     func showError(with message: String)
 }
 
@@ -37,7 +37,7 @@ extension FirstViewController: FirstView {
         nameTextField.placeholder = hint
     }
     
-    func setBtnText(_ text: String) {
+    func setButtonText(_ text: String) {
         submitButton.setTitle(text, for: .normal)
     }
     

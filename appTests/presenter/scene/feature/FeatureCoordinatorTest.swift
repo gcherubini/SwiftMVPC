@@ -18,36 +18,27 @@ class FeatureCoordinatorTest: QuickSpec {
     override func spec() {
         
         var navigationMock: NavigationControllerMock!
-        var featureCoordinator: FeatureCoordinator!
+        var sut: FeatureCoordinator!
         
         describe("FeatureCoordinatorTest") {
             
             beforeEach {
                 navigationMock = NavigationControllerMock()
-                featureCoordinator = FeatureCoordinator(navigationController: navigationMock)
+                sut = FeatureCoordinator(navigationController: navigationMock)
             }
             
             context("When it starts") {
-                it("Show the first scene") {
-                    featureCoordinator.start()
-                    expect(navigationMock.setViewControllersCall?.viewControllers[0] is FirstViewController) == true
-                    expect(navigationMock.setViewControllersCall?.animated) == false
+                it("Push the first scene") {
+									sut.start()
+									expect(navigationMock.setViewController?[0] is FirstViewController) == true
                 }
             }
             
-            context("When routes to first scene") {
-                it("Make and show firt scene") {
-                    featureCoordinator.showFirstScene()
-                    expect(navigationMock.setViewControllersCall?.viewControllers[0] is FirstViewController) == true
-                    expect(navigationMock.setViewControllersCall?.animated) == false
-                }
-            }
-            
-            context("When routes to second scene") {
-                it("Make and show second scene") {
-                    featureCoordinator.showSecondScene(userName: "God")
-                    expect(navigationMock.pushViewControllerCall?.viewController is SecondViewController) == true
-                    expect(navigationMock.pushViewControllerCall?.animated) == true
+            context("When user name is entered") {
+                it("Push the second scene") {
+                    sut.didEnterName("mockedName")
+										expect(navigationMock.pushedViewController?.viewController is SecondViewController) == true
+										expect(navigationMock.pushedViewController?.animated) == true
                 }
             }
         }
