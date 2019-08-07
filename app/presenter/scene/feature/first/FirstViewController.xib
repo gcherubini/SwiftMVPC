@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstViewController" customModule="app" customModuleProvider="target">
+            <connections>
+                <outlet property="nameTextField" destination="GgH-MB-Fd3" id="5FC-mt-4g9"/>
+                <outlet property="submitButton" destination="OrG-TB-ngt" id="aDO-fM-hnS"/>
+                <outlet property="view" destination="RM0-is-XkO" id="AZo-eD-XZ9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="RM0-is-XkO">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GgH-MB-Fd3">
+                    <rect key="frame" x="16" y="358" width="382" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrG-TB-ngt">
+                    <rect key="frame" x="182.5" y="438" width="49" height="30"/>
+                    <state key="normal" title="Submit"/>
+                    <connections>
+                        <action selector="onPrimaryBtnClick:" destination="-1" eventType="touchUpInside" id="vKg-b8-JEF"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OrG-TB-ngt" firstAttribute="centerY" secondItem="wVq-X9-uyr" secondAttribute="centerY" id="1Ie-FR-H5S"/>
+                <constraint firstItem="OrG-TB-ngt" firstAttribute="top" secondItem="GgH-MB-Fd3" secondAttribute="bottom" constant="50" id="1JS-ct-2Vg"/>
+                <constraint firstItem="OrG-TB-ngt" firstAttribute="centerX" secondItem="wVq-X9-uyr" secondAttribute="centerX" id="C9r-07-l6k"/>
+                <constraint firstItem="GgH-MB-Fd3" firstAttribute="leading" secondItem="wVq-X9-uyr" secondAttribute="leading" constant="16" id="Jgq-Lk-veV"/>
+                <constraint firstItem="wVq-X9-uyr" firstAttribute="trailing" secondItem="GgH-MB-Fd3" secondAttribute="trailing" constant="16" id="mqA-9t-dqt"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="wVq-X9-uyr"/>
+        </view>
+    </objects>
+</document>

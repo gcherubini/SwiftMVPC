@@ -19,8 +19,8 @@ class AppCoordinator: Coordinator {
          navigationController: UINavigationController = UINavigationController()) {
         self.window = window
         self.navigationController = navigationController
-				setupWindow()
-				setupStarterCoordinator()
+		setupWindow()
+		setupStarterCoordinator()
     }
 	
 	func setupWindow() {

@@ -24,7 +24,7 @@ class FeatureCoordinator: Coordinator {
 extension FeatureCoordinator {
     func showFirstScene() {
         let scene = FeatureSceneFactory.makeFirstScene(delegate: self)
-			navigationController.viewControllers = [scene]
+		navigationController.viewControllers = [scene]
     }
     
     func showSecondScene(userName: String) {

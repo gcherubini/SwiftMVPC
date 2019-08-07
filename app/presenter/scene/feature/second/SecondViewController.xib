@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondViewController" customModule="app" customModuleProvider="target">
+            <connections>
+                <outlet property="nameFromParamLabel" destination="G6h-s0-dRW" id="59Q-hj-3KB"/>
+                <outlet property="nameFromPersistenceLabel" destination="lyM-qc-3wZ" id="eVw-A1-DLP"/>
+                <outlet property="view" destination="0Zc-pZ-0j6" id="CTc-B1-51g"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0Zc-pZ-0j6">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name (from persistence)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyM-qc-3wZ">
+                    <rect key="frame" x="30" y="442.5" width="354" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name (from param)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6h-s0-dRW">
+                    <rect key="frame" x="30" y="394.5" width="354" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSc-lR-QiO">
+                    <rect key="frame" x="90" y="245" width="234" height="70.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="59"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="kGi-Gt-6JK" firstAttribute="trailing" secondItem="lyM-qc-3wZ" secondAttribute="trailing" constant="30" id="3mr-RD-WA2"/>
+                <constraint firstItem="aSc-lR-QiO" firstAttribute="centerX" secondItem="kGi-Gt-6JK" secondAttribute="centerX" id="HyE-8r-gpu"/>
+                <constraint firstItem="lyM-qc-3wZ" firstAttribute="top" secondItem="G6h-s0-dRW" secondAttribute="bottom" constant="27" id="JsP-4W-Paz"/>
+                <constraint firstItem="G6h-s0-dRW" firstAttribute="leading" secondItem="kGi-Gt-6JK" secondAttribute="leading" constant="30" id="VOi-2R-Tn2"/>
+                <constraint firstItem="lyM-qc-3wZ" firstAttribute="centerY" secondItem="kGi-Gt-6JK" secondAttribute="centerY" id="Xcz-uj-f13"/>
+                <constraint firstItem="G6h-s0-dRW" firstAttribute="top" secondItem="aSc-lR-QiO" secondAttribute="bottom" constant="79" id="cCP-6L-1BN"/>
+                <constraint firstItem="kGi-Gt-6JK" firstAttribute="trailing" secondItem="G6h-s0-dRW" secondAttribute="trailing" constant="30" id="mTG-cG-tNj"/>
+                <constraint firstItem="lyM-qc-3wZ" firstAttribute="leading" secondItem="kGi-Gt-6JK" secondAttribute="leading" constant="30" id="wxx-WK-jf4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="kGi-Gt-6JK"/>
+        </view>
+    </objects>
+</document>

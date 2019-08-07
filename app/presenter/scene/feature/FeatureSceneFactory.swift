@@ -11,7 +11,7 @@ import UIKit
 
 struct FeatureSceneFactory {
     static func makeFirstScene(delegate: FirstViewPresenterDelegate?) -> FirstViewController {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstViewController") as! FirstViewController
+        let viewController = FirstViewController()
         let service = PersistenceService()
         let presenter = FirstViewPresenter(service: service, view: viewController, delegate: delegate)
         viewController.presenter = presenter
@@ -19,7 +19,7 @@ struct FeatureSceneFactory {
     }
     
     static func makeSecondScene(userName: String?) -> SecondViewController {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        let viewController = SecondViewController()
         let service = PersistenceService()
         let presenter = SecondViewPresenter(service: service, view: viewController, nameFromParam: userName)
         viewController.presenter = presenter
