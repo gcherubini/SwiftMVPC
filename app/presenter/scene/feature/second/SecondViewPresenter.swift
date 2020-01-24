@@ -10,7 +10,7 @@ import Foundation
 
 class SecondViewPresenter {
     
-    let view: SecondView
+    let view: SecondView?
     let service: PersistenceService
     var nameFromParam: String?
     
@@ -27,21 +27,21 @@ class SecondViewPresenter {
     
     func presentNameFromParam() {
         guard let nameFromParam = nameFromParam, !nameFromParam.isEmpty else {
-            view.showError(with: "Error getting user name from param")
+            view?.showError(with: "Error getting user name from param")
             return
         }
         
         let message = "\(nameFromParam) (from param)"
-        view.setNameFromParam(message)
+        view?.setNameFromParam(message)
     }
     
     func presentNameFromPersistence() {
         guard let nameFromPersistence = service.getUserName(), !nameFromPersistence.isEmpty else {
-            view.showError(with: "Error getting user name from persistence")
+            view?.showError(with: "Error getting user name from persistence")
             return
         }
         
         let message = "\(nameFromPersistence) (from persistence)"
-        view.setNameFromPersistence(message)
+        view?.setNameFromPersistence(message)
     }
 }
